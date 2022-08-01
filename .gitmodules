@@ -1,0 +1,3 @@
+[submodule "Advanced2DPlatformer/Assets/SuperPupStudioUtilities"]
+	path = Advanced2DPlatformer/Assets/SuperPupStudioUtilities
+	url = https://github.com/EricWRogers/SPSUnityUtilities.git
