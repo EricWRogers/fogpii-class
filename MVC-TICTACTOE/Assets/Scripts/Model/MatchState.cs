@@ -2,17 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MatchState : MonoBehaviour
+public class Player
 {
-    // Start is called before the first frame update
-    void Start()
+    public int piecesOnBoard;
+    public int pieceCount;
+
+    public void Reset()
     {
-        
+        pieceCount = 9;
+        piecesOnBoard = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool HasPiece()
     {
-        
+        return (pieceCount > 0);
     }
+}
+public class MatchState
+{
+    public static readonly int playerCount = 2;
+    public Player[] players = null;
+
+    public static readonly int[] winMasks = {
+        
+    };
+
+    public void Reset()
+    {
+        players = new Player[playerCount];
+
+        for (int i = 0; i < playerCount; ++i)
+        {
+            if (players[i] == null)
+            {
+                players[i] = new Player();
+            }
+
+            players[i].Reset();
+        }
+    }
+
+    public int GetNumPlayers()
+    {
+        return playerCount;
+    }
+
 }

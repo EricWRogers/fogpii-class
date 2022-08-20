@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class LocalHumanController : MonoBehaviour
+public class LocalHumanController : Controller
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void HandleEvent(PlyEvent e)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        switch(e.type)
+        {
+            case EventType.Ply:
+                e.playerId = playerId;
+                // TODO : Remove GameInstance.Get().model.PushEvent(e);
+                break;
+        }
     }
 }

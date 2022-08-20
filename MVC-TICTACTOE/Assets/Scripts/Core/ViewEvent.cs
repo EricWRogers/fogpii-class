@@ -1,18 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ViewEvent : MonoBehaviour
+public struct ViewEvent
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    EventType type;
+    PlyEvent ply;
+    int dimension;
+    int playerCount;
+    int playerId;
 }

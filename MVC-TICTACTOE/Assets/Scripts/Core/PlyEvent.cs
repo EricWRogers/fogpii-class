@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlyEvent : MonoBehaviour
+public enum EventType
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    EndMatchStalemate,
+    EndMatchWin,
+    Ply,
+    StartMatch,
+    StartTurn
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class PlyEvent
+{
+    public EventType type;
+    public int playerId;
+    public int row;
+    public int col;
+    public int ringIndex;
 }

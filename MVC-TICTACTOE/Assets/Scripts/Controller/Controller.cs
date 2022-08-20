@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public virtual void HandleEvent(PlyEvent e) {}
+    public virtual void OnStartTurn() {}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public int playerId;
+	private List<PlyEvent> events = new List<PlyEvent>();
+
+	public void PushEvent(PlyEvent e)
+	{
+		events.Add(e);
+	}
+
+	void FixedUpdate()
+	{
+		if (events.Count > 0)
+		{
+			PlyEvent e = events[0];
+			events.RemoveAt(0);
+
+			HandleEvent(e);
+		}
+	}
 }
