@@ -3471,7 +3471,7 @@ MonoBehaviour:
   col: {fileID: 1863380209}
   speed: 10
   collisionTestOffset: 0.1
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 1493016963}
   animator: {fileID: 1493016964}
 --- !u!114 &1863380213
 MonoBehaviour:
