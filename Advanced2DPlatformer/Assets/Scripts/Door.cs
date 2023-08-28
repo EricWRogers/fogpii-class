@@ -9,7 +9,7 @@ public class Door : MonoBehaviour
     public GameObject doorOpened;
     public string targetTag;
     public UnityEvent doorOpenEvent;
-    private bool isDoorOpened = false;
+    private bool m_isDoorOpened = false;
 
     void Awake()
     {
@@ -19,12 +19,12 @@ public class Door : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (isDoorOpened)
+        if (m_isDoorOpened)
             return;
         
         if (col.gameObject.name == targetTag)
         {
-            isDoorOpened = true;
+            m_isDoorOpened = true;
 
             doorClosed.SetActive(false);
             doorOpened.SetActive(true);
